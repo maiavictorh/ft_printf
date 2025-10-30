@@ -6,7 +6,7 @@
 #    By: victode- <victode-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/12 15:34:12 by victode-          #+#    #+#              #
-#    Updated: 2025/10/18 04:04:51 by victode-         ###   ########.fr        #
+#    Updated: 2025/10/30 00:24:28 by victode-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME= libftprintf.a
 
 # Files to compile
-SRCS= ft_printf.c
+SRCS= $(wildcard *.c)
 
 # Object files
 OBJS= $(SRCS:.c=.o)
