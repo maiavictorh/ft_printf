@@ -6,7 +6,7 @@
 /*   By: victode- <victode-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 14:45:40 by victode-          #+#    #+#             */
-/*   Updated: 2025/10/30 00:50:08 by victode-         ###   ########.fr       */
+/*   Updated: 2025/11/01 19:37:59 by victode-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,13 @@
 # define UPHEX "0123456789ABCDEF"
 
 /* ========= Main function ========= */
+
 int		ft_printf(const char *format, ...);
 
 /* =========== Helper functions =========== */
+
+int	ft_strlen(const char *s);
+int	ft_putstr(const char *s);
+
 
 #endif

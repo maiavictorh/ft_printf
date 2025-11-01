@@ -6,7 +6,7 @@
 #    By: victode- <victode-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/12 15:34:12 by victode-          #+#    #+#              #
-#    Updated: 2025/10/30 00:24:28 by victode-         ###   ########.fr        #
+#    Updated: 2025/11/01 18:44:10 by victode-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ fclean: clean
 # Rule: re = equivalent to <make fclean> and <make all>
 re: fclean all
 
-# test: $(NAME) main/main.c
-# 	$(CC) $(CFLAGS) main/main.c -L. -lft -o test
+test: $(NAME) main.c
+	$(CC) $(CFLAGS) main.c -L. -lft -o test
 
 .PHONY: all clean fclean re test
