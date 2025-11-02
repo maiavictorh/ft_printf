@@ -6,7 +6,7 @@
 /*   By: victode- <victode-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 14:41:34 by victode-          #+#    #+#             */
-/*   Updated: 2025/11/02 18:15:05 by victode-         ###   ########.fr       */
+/*   Updated: 2025/11/02 20:16:14 by victode-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ static int	ft_print_spec(int c, va_list args)
 		return (ft_putstr(va_arg(args, char *)));
 	else if (c == 'p')
 		
-	else if (c == 'd')
-		
-	else if (c == 'i')
+	else if (c == 'd' || c == 'i')
 		
 	else if (c == 'u')
 		
