@@ -6,7 +6,7 @@
 #    By: victode- <victode-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/12 15:34:12 by victode-          #+#    #+#              #
-#    Updated: 2025/11/01 18:44:10 by victode-         ###   ########.fr        #
+#    Updated: 2025/11/02 18:12:28 by victode-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME= libftprintf.a
 
 # Files to compile
-SRCS= $(wildcard *.c)
+SRCS=  ft_strlen.c ft_print.c ft_printf.c
 
 # Object files
 OBJS= $(SRCS:.c=.o)
@@ -49,7 +49,7 @@ fclean: clean
 # Rule: re = equivalent to <make fclean> and <make all>
 re: fclean all
 
-test: $(NAME) main.c
-	$(CC) $(CFLAGS) main.c -L. -lft -o test
+test: $(NAME) main.c clean
+	$(CC) $(CFLAGS) main.c $(NAME) -o test
 
 .PHONY: all clean fclean re test
