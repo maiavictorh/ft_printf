@@ -6,7 +6,7 @@
 #    By: victode- <victode-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/12 15:34:12 by victode-          #+#    #+#              #
-#    Updated: 2025/11/02 18:12:28 by victode-         ###   ########.fr        #
+#    Updated: 2025/11/03 14:22:21 by victode-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ SRCS=  ft_strlen.c ft_print.c ft_printf.c
 
 # Object files
 OBJS= $(SRCS:.c=.o)
-# BNS_OBJS= $(BONUS:.c=.o)
 
 # Compile, flag, compress and remove commands
 CC= cc
@@ -32,7 +31,6 @@ all: $(NAME)
 # libftprintf.a = compress objects and create library
 $(NAME): $(OBJS)
 	$(COMPRESS) $(NAME) $(OBJS)
-	ranlib $(NAME)
 
 # Compile the objects
 %.o: %.c

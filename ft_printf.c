@@ -6,7 +6,7 @@
 /*   By: victode- <victode-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 14:41:34 by victode-          #+#    #+#             */
-/*   Updated: 2025/11/02 20:16:14 by victode-         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:10:25 by victode-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,22 @@ static int	ft_is_spec(int c)
 		|| c == 'u' || c == 'x' || c == 'X' || c == '%');
 }
 
-static int	ft_print_spec(int c, va_list args)
+static int	ft_print_spec(int c, va_list arg)
 {
 	if (c == 'c')
-		return (ft_putchar(va_arg(args, int)));
+		return (ft_putchar(va_arg(arg, int)));
 	else if (c == 's')
-		return (ft_putstr(va_arg(args, char *)));
+		return (ft_putstr(va_arg(arg, char *)));
 	else if (c == 'p')
-		
+		return (ft_putptr(va_arg(arg, int)));
 	else if (c == 'd' || c == 'i')
-		
+		return (ft_putbase(va_arg(arg, int), DEC, 10));
 	else if (c == 'u')
-		
+		return (ft_putbase(va_arg(arg, unsigned int), DEC, 10));
 	else if (c == 'x')
-		
+		return (ft_putbase(va_arg(arg, unsigned int), HEX, 16));
 	else if (c == 'X')
-		
+		return (ft_putbase(va_arg(arg, unsigned int), UPHEX, 16));
 	else if (c == '%')
 		return (ft_putchar('%'));
 	return (0);
@@ -48,12 +48,14 @@ int	ft_printf(const char *format, ...)
 	i = 0;
 	count = 0;
 	va_start(args, format);
+	if (!format)
+		return (0);
 	while (format[i])
 	{
 		if (format[i] == '%')
 		{
-			if (ft_is_spec(format[i + 1]))
-				count += ft_print_spec(format[i + 1], args);
+			if (ft_is_spec(format[++i]))
+				count += ft_print_spec(format[i], args);
 			else
 				count += ft_putchar(format[i]);
 		}

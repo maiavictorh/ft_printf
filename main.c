@@ -1,0 +1,119 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: victode- <victode-@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/03 13:30:49 by victode-          #+#    #+#             */
+/*   Updated: 2025/11/03 14:50:33 by victode-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_printf.h"
+
+int main(void)
+{
+	int std_ret;
+	int ft_ret;
+	
+	printf("======== FT_PRINTF TESTS ========\n\n");
+	
+	printf("1. Basic strings:\n");
+	std_ret = printf("Standard: Hello World!\n");
+	ft_ret = ft_printf("Custom:   Hello World!\n");
+	printf("std_ret: %d, ft_ret: %d\n\n", std_ret, ft_ret);
+
+	printf("\n2. Characters:\n");
+	std_ret = printf("Standard: [%c]\n", 'A');
+	ft_ret = ft_printf("Custom:   [%c]\n", 'A');
+	printf("std_ret: %d, ft_ret: %d\n\n", std_ret, ft_ret);
+	
+	printf("\n3. Strings:\n");
+	std_ret = printf("Standard: [%s]\n", "Test string");
+	ft_ret = ft_printf("Custom:   [%s]\n", "Test string");
+	printf("std_ret: %d, ft_ret: %d\n\n", std_ret, ft_ret);
+	
+	printf("\n4. Pointers:\n");
+	int x = 42;
+	std_ret = printf("Standard: [%p]\n", &x);
+	ft_ret = ft_printf("Custom:   [%p]\n", &x);
+	printf("std_ret: %d, ft_ret: %d\n\n", std_ret, ft_ret);
+	
+	printf("\n5. Integers (decimal):\n");
+	std_ret = printf("Standard: [%d]\n", 42);
+	ft_ret = ft_printf("Custom:   [%d]\n", 42);
+	printf("std_ret: %d, ft_ret: %d\n\n", std_ret, ft_ret);
+	
+	printf("\n6. Negative integers:\n");
+	std_ret = printf("Standard: [%d]\n", -42);
+	ft_ret = ft_printf("Custom:   [%d]\n", -42);
+	printf("std_ret: %d, ft_ret: %d\n\n", std_ret, ft_ret);
+	
+	printf("\n7. Unsigned integers:\n");
+	std_ret = printf("Standard: [%u]\n", 123456);
+	ft_ret = ft_printf("Custom:   [%u]\n", 123456);
+	printf("std_ret: %d, ft_ret: %d\n\n", std_ret, ft_ret);
+	
+	printf("\n8. Hexadecimal (lowercase):\n");
+	std_ret = printf("Standard: [%x]\n", 255);
+	ft_ret = ft_printf("Custom:   [%x]\n", 255);
+	printf("std_ret: %d, ft_ret: %d\n\n", std_ret, ft_ret);
+	
+	printf("\n9. Hexadecimal (uppercase):\n");
+	std_ret = printf("Standard: [%X]\n", 255);
+	ft_ret = ft_printf("Custom:   [%X]\n", 255);
+	printf("std_ret: %d, ft_ret: %d\n\n", std_ret, ft_ret);
+	
+	printf("\n10. Percent sign:\n");
+	std_ret = printf("Standard: [%%]\n");
+	ft_ret = ft_printf("Custom:   [%%]\n");
+	printf("std_ret: %d, ft_ret: %d\n\n", std_ret, ft_ret);
+	
+	printf("\n11. Multiple format specifiers:\n");
+	std_ret = printf("Standard: Char: %c, String: %s, Int: %d\n", 'X', "hello", 123);
+	ft_ret = ft_printf("Custom:   Char: %c, String: %s, Int: %d\n", 'X', "hello", 123);
+	printf("std_ret: %d, ft_ret: %d\n\n", std_ret, ft_ret);
+	
+	printf("\n12. Edge cases:\n");
+	
+	printf("NULL string:\n");
+	std_ret = printf("Standard: [%s]\n", (char *)NULL);
+	ft_ret = ft_printf("Custom:   [%s]\n", (char *)NULL);
+	printf("std_ret: %d, ft_ret: %d\n", std_ret, ft_ret);
+	
+	printf("Zero:\n");
+	std_ret = printf("Standard: [%d]\n", 0);
+	ft_ret = ft_printf("Custom:   [%d]\n", 0);
+	printf("std_ret: %d, ft_ret: %d\n", std_ret, ft_ret);
+	
+	printf("INT_MAX:\n");
+	std_ret = printf("Standard: [%d]\n", INT_MAX);
+	ft_ret = ft_printf("Custom:   [%d]\n", INT_MAX);
+	printf("std_ret: %d, ft_ret: %d\n", std_ret, ft_ret);
+	
+	printf("INT_MIN:\n");
+	std_ret = printf("Standard: [%d]\n", INT_MIN);
+	ft_ret = ft_printf("Custom:   [%d]\n", INT_MIN);
+	printf("std_ret: %d, ft_ret: %d\n\n", std_ret, ft_ret);
+	
+	printf("\n13. Empty string:\n");
+	std_ret = printf("Standard: [%s]\n", "");
+	ft_ret = ft_printf("Custom:   [%s]\n", "");
+	printf("std_ret: %d, ft_ret: %d\n\n", std_ret, ft_ret);
+	
+	// printf("14. Return value comparison:\n");
+	// printf("Testing return values with various inputs:\n");
+
+	// int test_values[] = {0, 1, -1, 100, -100, INT_MAX, INT_MIN};
+
+	// for (int i = 0; i < 7; i++)
+	// {
+	// 	std_ret = printf("std: %d", test_values[i]);
+	// 	printf(" -> ");
+	// 	ft_ret = ft_printf("ft: %d", test_values[i]);
+	// 	printf(" | std_ret: %d, ft_ret: %d %s\n", 
+	// 	  		std_ret, ft_ret, (std_ret == ft_ret) ? "✓" : "✗");
+	// }
+	return (0);
+}
