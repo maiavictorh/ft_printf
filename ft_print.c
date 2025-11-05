@@ -6,7 +6,7 @@
 /*   By: victode- <victode-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 16:36:40 by victode-          #+#    #+#             */
-/*   Updated: 2025/11/03 18:51:59 by victode-         ###   ########.fr       */
+/*   Updated: 2025/11/05 18:22:21 by victode-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,18 @@ int	ft_putstr(const char *s)
 	return (ft_strlen(s));
 }
 
-int	ft_putbase(int nb, char *base, int base_len)
+int	ft_putbase(t_ull n, char *base, int base_len)
 {
-	t_ull	count;
+	int	count;
 
 	count = 0;
-	if (nb < 0)
-	{
-		count += ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb >= base_len)
-		count += ft_putbase(nb / base_len, base, base_len);
-	count += ft_putchar(base[nb % base_len]);
+	if (n >= (t_ull)base_len)
+		count += ft_putbase(n / base_len, base, base_len);
+	count += ft_putchar(base[n % base_len]);
 	return (count);
 }
 
-int	ft_putptr(int ptr)
+int	ft_putptr(t_ull ptr)
 {
 	if (!ptr)
 		return (ft_putstr("(nil)"));
