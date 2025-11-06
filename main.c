@@ -6,12 +6,12 @@
 /*   By: victode- <victode-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 13:30:49 by victode-          #+#    #+#             */
-/*   Updated: 2025/11/06 02:03:50 by victode-         ###   ########.fr       */
+/*   Updated: 2025/11/06 21:24:21 by victode-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-/*
+
 int main(void)
 {
 	int std_ret;
@@ -120,4 +120,3 @@ int main(void)
 	}
 	return (0);
 }
-*/
