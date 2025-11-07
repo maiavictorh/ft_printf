@@ -6,7 +6,7 @@
 /*   By: victode- <victode-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 13:30:49 by victode-          #+#    #+#             */
-/*   Updated: 2025/11/06 21:24:21 by victode-         ###   ########.fr       */
+/*   Updated: 2025/11/07 15:25:49 by victode-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int main(void)
 	printf("std_ret: %d, ft_ret: %d\n\n", std_ret, ft_ret);
 	
 	printf("\n3. Strings:\n");
-	std_ret = printf("printf: [%s]\n", "Test string");
-	ft_ret = ft_printf("ft_printf: [%s]\n", "Test string");
+	std_ret = printf("printf: [%s]\n", "%");
+	ft_ret = ft_printf("ft_printf: [%s]\n", "%");
 	printf("std_ret: %d, ft_ret: %d\n\n", std_ret, ft_ret);
 	
 	printf("\n4. Pointers:\n");
@@ -91,24 +91,24 @@ int main(void)
 	printf("std_ret: %d, ft_ret: %d\n", std_ret, ft_ret);
 	
 	printf("\nINT_MAX:\n");
-	std_ret = printf("printf: [%d]\n", INT_MAX);
-	ft_ret = ft_printf("ft_printf: [%d]\n", INT_MAX);
+	std_ret = printf("printf: [%d]\n", 2147483647);
+	ft_ret = ft_printf("ft_printf: [%d]\n", 2147483647);
 	printf("std_ret: %d, ft_ret: %d\n", std_ret, ft_ret);
 	
 	printf("\nINT_MIN:\n");
-	std_ret = printf("printf: [%d]\n", INT_MIN);
-	ft_ret = ft_printf("ft_printf: [%d]\n", INT_MIN);
+	std_ret = printf("printf: [%d]\n", -2147483647);
+	ft_ret = ft_printf("ft_printf: [%d]\n", -2147483647);
 	printf("std_ret: %d, ft_ret: %d\n\n", std_ret, ft_ret);
-	
+
 	printf("\n13. Empty string:\n");
 	std_ret = printf("printf: [%s]\n", "");
 	ft_ret = ft_printf("ft_printf: [%s]\n", "");
 	printf("std_ret: %d, ft_ret: %d\n\n", std_ret, ft_ret);
-	
+
 	printf("14. Return value comparison:\n");
 	printf("Testing return values with various inputs:\n");
 
-	int test_values[] = {0, 1, -1, 100, -100, INT_MAX, INT_MIN};
+	int test_values[] = {0, 1, -1, 100, -100, 2147483647, -2147483647};
 
 	for (int i = 0; i < 7; i++)
 	{

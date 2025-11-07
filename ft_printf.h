@@ -6,7 +6,7 @@
 /*   By: victode- <victode-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 14:45:40 by victode-          #+#    #+#             */
-/*   Updated: 2025/11/06 02:05:37 by victode-         ###   ########.fr       */
+/*   Updated: 2025/11/07 15:24:41 by victode-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <unistd.h>
 # include <stdarg.h>
-# include <limits.h>
 # include <stdio.h>
 
 # define DEC "0123456789"
