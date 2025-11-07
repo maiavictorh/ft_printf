@@ -6,12 +6,17 @@
 /*   By: victode- <victode-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 14:41:34 by victode-          #+#    #+#             */
-/*   Updated: 2025/11/07 15:57:40 by victode-         ###   ########.fr       */
+/*   Updated: 2025/11/07 17:44:32 by victode-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
+/**
+ * @brief Calculates the length of a null-terminated string.
+ *
+ * @param s Pointer to the string.
+ * @return The number of characters in the string, excluding the null terminator.
+ */
 int	ft_strlen(const char *s)
 {
 	int	i;
@@ -22,12 +27,45 @@ int	ft_strlen(const char *s)
 	return (i);
 }
 
+/**
+ * @brief Checks if a character is a valid format specifier for ft_printf.
+ *
+ * Supported specifiers: c, s, p, d, i, u, x, X, %.
+ *
+ * @param c The character to check.
+ * @return 1 if the character is a valid specifier, otherwise 0.
+ */
 static int	ft_is_spec(int c)
 {
 	return (c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i'
 		|| c == 'u' || c == 'x' || c == 'X' || c == '%');
 }
 
+/**
+ * @brief Prints the value corresponding to a format specifier.
+ *
+ * Handles each specifier by calling the appropriate helper function.
+ *
+ * Supported specifiers:
+ *
+ * c: character
+ *
+ * s: string
+ *
+ * p: pointer
+ *
+ * d/i: integer
+ *
+ * u: unsigned integer
+ *
+ * x/X: hexadecimal (lower/uppercase)
+ *
+ * %: percent sign
+ *
+ * @param c The format specifier character.
+ * @param arg The list of variable arguments.
+ * @return The number of characters printed.
+ */
 static int	ft_print_spec(int c, va_list *arg)
 {
 	if (c == 'c')
@@ -49,6 +87,16 @@ static int	ft_print_spec(int c, va_list *arg)
 	return (0);
 }
 
+/**
+ * @brief Custom implementation of printf.
+ *
+ * Parses the format string and prints formatted output to the standard output.
+ * Supports standard specifiers (c, s, p, d, i, u, x, X, %).
+ *
+ * @param format The string format.
+ * @param ... The variable arguments to format and print.
+ * @return The total number of characters printed.
+ */
 int	ft_printf(const char *format, ...)
 {
 	int		i;

@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print.c                                         :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victode- <victode-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 16:36:40 by victode-          #+#    #+#             */
-/*   Updated: 2025/11/06 01:57:54 by victode-         ###   ########.fr       */
+/*   Updated: 2025/11/07 17:55:34 by victode-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
+/**
+ * @brief Writes a single character to the standard output.
+ *
+ * @param c The character to print.
+ * @return The number of characters printed (always 1).
+ */
 int	ft_putchar(char c)
 {
 	write (1, &c, 1);
 	return (1);
 }
 
+/**
+ * @brief Writes a string to the standard output.
+ *
+ * If the string is NULL, it prints "(null)" instead.
+ *
+ * @param s The string to print.
+ * @return The number of characters printed.
+ */
 int	ft_putstr(const char *s)
 {
 	if (!s)
@@ -26,6 +39,14 @@ int	ft_putstr(const char *s)
 	return (ft_strlen(s));
 }
 
+/**
+ * @brief Writes an integer (decimal base) to the standard output.
+ *
+ * Handles negative numbers correctly.
+ *
+ * @param nb The integer to print.
+ * @return The number of characters printed.
+ */
 int	ft_putnbr(int nb)
 {
 	long	n;
@@ -45,6 +66,17 @@ int	ft_putnbr(int nb)
 	return (count);
 }
 
+/**
+ * @brief Writes an unsigned number in a given base to the standard output.
+ *
+ * The function recursively divides the number by the base length
+ * and prints the corresponding digits.
+ *
+ * @param n The number to print.
+ * @param base The string representing the base characters.
+ * @param base_len The length of the base.
+ * @return The number of characters printed.
+ */
 int	ft_putbase(t_ull n, char *base, int base_len)
 {
 	int	count;
@@ -56,6 +88,14 @@ int	ft_putbase(t_ull n, char *base, int base_len)
 	return (count);
 }
 
+/**
+ * @brief Writes a memory address (pointer) to the standard output.
+ *
+ * Prints "(nil)" if the pointer is NULL. Otherwise prints in hexadecimal format.
+ *
+ * @param ptr The pointer to print.
+ * @return The number of characters printed.
+ */
 int	ft_putptr(t_ull ptr)
 {
 	if (!ptr)
