@@ -6,7 +6,7 @@
 /*   By: victode- <victode-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 13:30:49 by victode-          #+#    #+#             */
-/*   Updated: 2025/11/07 17:43:30 by victode-         ###   ########.fr       */
+/*   Updated: 2025/11/09 18:54:35 by victode-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,12 @@ int main(void)
 	std_ret = printf("printf: [%s]\n", s);
 	ft_ret = ft_printf("ft_printf: [%s]\n", s);
 	printf("std_ret: %d, ft_ret: %d\n", std_ret, ft_ret);
-	
-	printf("\nZero:\n");
-	std_ret = printf("printf: [%d]\n", 0);
-	ft_ret = ft_printf("ft_printf: [%d]\n", 0);
+
+	printf("%d", printf("vis %"));
+
+	printf("\nInvalid specifier:\n");
+	std_ret = printf("printf: [%d]\n");
+	ft_ret = ft_printf("ft_printf: [%d]\n");
 	printf("std_ret: %d, ft_ret: %d\n", std_ret, ft_ret);
 	
 	printf("\nINT_MAX:\n");

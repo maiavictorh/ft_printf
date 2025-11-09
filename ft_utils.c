@@ -6,7 +6,7 @@
 /*   By: victode- <victode-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 16:36:40 by victode-          #+#    #+#             */
-/*   Updated: 2025/11/07 17:55:34 by victode-         ###   ########.fr       */
+/*   Updated: 2025/11/09 18:36:11 by victode-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@
  */
 int	ft_putchar(char c)
 {
-	write (1, &c, 1);
-	return (1);
+	return (write (1, &c, 1));
 }
 
 /**
@@ -35,8 +34,7 @@ int	ft_putstr(const char *s)
 {
 	if (!s)
 		return (write (1, "(null)", 6));
-	write (1, s, ft_strlen(s));
-	return (ft_strlen(s));
+	return (write (1, s, ft_strlen(s)));
 }
 
 /**
