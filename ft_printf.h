@@ -6,7 +6,7 @@
 /*   By: victode- <victode-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 14:45:40 by victode-          #+#    #+#             */
-/*   Updated: 2025/11/07 18:57:09 by victode-         ###   ########.fr       */
+/*   Updated: 2025/11/10 17:26:41 by victode-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	ft_putnbr(int nb);
 int	ft_putchar(char c);
 int	ft_putptr(t_ull ptr);
 int	ft_putstr(const char *s);
-int	ft_strlen(const char *s);
 int	ft_putbase(t_ull n, char *base, int base_len);
 
 #endif

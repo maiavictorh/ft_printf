@@ -6,27 +6,11 @@
 /*   By: victode- <victode-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 14:41:34 by victode-          #+#    #+#             */
-/*   Updated: 2025/11/09 19:29:02 by victode-         ###   ########.fr       */
+/*   Updated: 2025/11/10 17:26:27 by victode-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-/**
- * @brief Calculates the length of a null-terminated string.
- *
- * @param s Pointer to the string.
- * @return The number of characters in the string, excluding the null terminator.
- */
-int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
 /**
  * @brief Checks if a character is a valid format specifier for ft_printf.
  *
@@ -107,13 +91,15 @@ int	ft_printf(const char *format, ...)
 	count = 0;
 	va_start(args, format);
 	if (!format)
-		return (0);
+		return (-1);
 	while (format[i])
 	{
 		if (format[i] == '%')
 		{
-			if (ft_is_spec(format[++i]))
-				count += ft_print_spec(format[i], &args);
+			if (ft_is_spec(format[i + 1]))
+				count += ft_print_spec(format[++i], &args);
+			else if (!ft_is_spec(format[i + 1]))
+				count += ft_putchar('%');
 		}
 		else
 			count += ft_putchar(format[i]);
@@ -122,3 +108,28 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
+/*
+int main(void)
+{
+	printf("PRINTF:\n");
+	printf("%d", printf(NULL));
+	printf("\n");
+	printf("%d", printf("var%d"));
+	printf("\n");
+	printf("%d", printf("var%w", 42));
+	printf("\n");
+	printf("%%");
+	printf("\n\n");
+
+	ft_printf("FT_PRINTF:\n");
+	ft_printf("%d", ft_printf(NULL));
+	ft_printf("\n");
+	ft_printf("%d", ft_printf("var%d"));
+	ft_printf("\n");
+	ft_printf("%d", ft_printf("var%w", 42));
+	ft_printf("\n");
+	ft_printf("%%");
+	ft_printf("\n");
+	return (0);
+}
+*/

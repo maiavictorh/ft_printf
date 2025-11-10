@@ -6,7 +6,7 @@
 /*   By: victode- <victode-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 13:30:49 by victode-          #+#    #+#             */
-/*   Updated: 2025/11/09 18:54:35 by victode-         ###   ########.fr       */
+/*   Updated: 2025/11/10 14:44:55 by victode-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,18 +78,16 @@ int main(void)
 	ft_ret = ft_printf("ft_printf: [%s]\n", s);
 	printf("std_ret: %d, ft_ret: %d\n", std_ret, ft_ret);
 
-	printf("%d", printf("vis %"));
-
 	printf("\nInvalid specifier:\n");
-	std_ret = printf("printf: [%d]\n");
-	ft_ret = ft_printf("ft_printf: [%d]\n");
+	std_ret = printf("printf: [%/]\n", 42);
+	ft_ret = ft_printf("ft_printf: [%/]\n", 42);
 	printf("std_ret: %d, ft_ret: %d\n", std_ret, ft_ret);
-	
+
 	printf("\nINT_MAX:\n");
 	std_ret = printf("printf: [%d]\n", INT_MAX);
 	ft_ret = ft_printf("ft_printf: [%d]\n", INT_MAX);
 	printf("std_ret: %d, ft_ret: %d\n", std_ret, ft_ret);
-	
+
 	printf("\nINT_MIN:\n");
 	std_ret = printf("printf: [%d]\n", INT_MIN);
 	ft_ret = ft_printf("ft_printf: [%d]\n", INT_MIN);
@@ -99,5 +97,7 @@ int main(void)
 	std_ret = printf("printf: [%p]\n", NULL);
 	ft_ret = ft_printf("ft_printf: [%p]\n", NULL);
 	printf("std_ret: %d, ft_ret: %d\n\n", std_ret, ft_ret);
+
+	printf("%d\n", printf(NULL));
 	return (0);
 }

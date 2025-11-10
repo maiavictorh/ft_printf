@@ -6,7 +6,7 @@
 #    By: victode- <victode-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/12 15:34:12 by victode-          #+#    #+#              #
-#    Updated: 2025/11/07 15:12:30 by victode-         ###   ########.fr        #
+#    Updated: 2025/11/10 15:34:36 by victode-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ $(NAME): $(OBJS)
 
 # Rule: clean = remove temporary files (objects)
 clean:
-	$(RM) $(OBJS) $(BNS_OBJS)
+	$(RM) $(OBJS)
 
 # Rule: fclean = remove all files (objects and libftprintf.a)
 fclean: clean
