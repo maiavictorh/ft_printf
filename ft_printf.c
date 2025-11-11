@@ -6,7 +6,7 @@
 /*   By: victode- <victode-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/12 14:41:34 by victode-          #+#    #+#             */
-/*   Updated: 2025/11/10 17:26:27 by victode-         ###   ########.fr       */
+/*   Updated: 2025/11/11 16:39:34 by victode-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,8 @@ int	ft_printf(const char *format, ...)
 				count += ft_print_spec(format[++i], &args);
 			else if (!ft_is_spec(format[i + 1]))
 				count += ft_putchar('%');
+			else if (format[i + 1] == '\0')
+				return (-1);
 		}
 		else
 			count += ft_putchar(format[i]);
@@ -108,10 +110,12 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-/*
+
 int main(void)
 {
-	printf("PRINTF:\n");
+	printf("%d\n", printf("vic %", 10));
+	ft_printf("%d\n", ft_printf("vic %", 10));
+	/* printf("PRINTF:\n");
 	printf("%d", printf(NULL));
 	printf("\n");
 	printf("%d", printf("var%d"));
@@ -130,6 +134,5 @@ int main(void)
 	ft_printf("\n");
 	ft_printf("%%");
 	ft_printf("\n");
-	return (0);
+ */	return (0);
 }
-*/
